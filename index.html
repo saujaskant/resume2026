@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio 2026 | Junior Applicant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background: #fafafa; color: #1a1a1a; font-family: 'Inter', sans-serif; }
+        .resume-shadow { box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1); }
+        .gradient-text { background: linear-gradient(to right, #2563eb, #7c3aed); -webkit-background-clip: text; color: transparent; }
+    </style>
+</head>
+<body class="bg-slate-50 min-h-screen">
+
+    <nav class="max-w-5xl mx-auto py-6 px-4 flex justify-between items-center">
+        <span class="font-bold tracking-tighter text-xl">PORTFOLIO.26</span>
+        <a href="resume.pdf" download class="text-sm font-semibold text-blue-600 hover:text-blue-800 transition">Download PDF</a>
+    </nav>
+
+    <main class="max-w-5xl mx-auto px-4 py-12">
+        <header class="mb-16">
+            <h1 class="text-6xl font-black mb-4">Hi, I'm <span class="gradient-text">Your Name.</span></h1>
+            <p class="text-xl text-slate-500 max-w-2xl leading-relaxed">
+                Aspiring [Major Name] student. Focused on building [Project Type] and preparing for university enrollment in Fall 2026.
+            </p>
+        </header>
+
+        <div class="grid lg:grid-cols-12 gap-12">
+            
+            <div class="lg:col-span-4 space-y-8">
+                <section>
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">Focus Areas</h2>
+                    <ul class="space-y-2 text-slate-700">
+                        <li class="flex items-center gap-2"><span>🚀</span> Computer Science</li>
+                        <li class="flex items-center gap-2"><span>📊</span> Data Analysis</li>
+                        <li class="flex items-center gap-2"><span>🌱</span> Sustainability</li>
+                    </ul>
+                </section>
+
+                <section class="bg-white p-6 rounded-2xl border border-slate-200">
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">College Status</h2>
+                    <p class="text-sm text-slate-600">Applications submitting in 6 months. Currently finalizing honors coursework.</p>
+                </section>
+            </div>
+
+            <div class="lg:col-span-8">
+                <div class="bg-white rounded-2xl resume-shadow overflow-hidden" style="height: 800px;">
+                    <object data="saujaskantresume.pdf" type="application/pdf" width="100%" height="100%">
+                        <iframe src="saujaskantresume.pdf" width="100%" height="100%" style="border: none;">
+                            <div class="p-10 text-center">
+                                <p>Your browser doesn't support direct viewing.</p>
+                                <a href="resume.pdf" class="text-blue-600 font-bold underline">Click here to view the Resume</a>
+                            </div>
+                        </iframe>
+                    </object>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="max-w-5xl mx-auto py-20 px-4 text-slate-400 text-sm border-t border-slate-200 mt-20">
+        &copy; 2026 • Designed & Coded by Your Name
+    </footer>
+
+</body>
+</html>
