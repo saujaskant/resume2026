@@ -22,16 +22,16 @@
 
         .container { max-width: 1200px; margin: 0 auto; }
 
-        /* Header Styling */
+        /* Professional Header */
         header { margin-bottom: 40px; border-left: 4px solid var(--accent); padding-left: 20px; }
         h1 { margin: 0; font-size: 3rem; font-weight: 800; letter-spacing: -0.05em; }
         .tagline { color: var(--accent); font-size: 1.2rem; font-weight: 600; margin-top: 5px; }
 
-        /* The Grid - Fixed spacing to prevent merging */
+        /* The Grid - 3-Column Fixed Structure to prevent overlapping */
         .bento-grid { 
             display: grid; 
             grid-template-columns: repeat(3, 1fr); 
-            grid-auto-rows: minmax(180px, auto); 
+            grid-auto-rows: minmax(200px, auto); 
             gap: 24px; 
         }
 
@@ -47,23 +47,23 @@
 
         .block:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5); }
 
-        /* Column Spanning */
+        /* Grid Logic */
         .span-2 { grid-column: span 2; }
-        .span-3 { grid-column: span 3; }
         .row-2 { grid-row: span 2; }
 
         /* Content Styling */
         .label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--accent); letter-spacing: 0.1em; margin-bottom: 12px; display: block; }
         h2 { font-size: 1.5rem; margin: 0 0 12px 0; color: #fff; }
         p { margin: 0; color: var(--text-dim); font-size: 0.95rem; }
+        ul { padding-left: 18px; color: var(--text-dim); font-size: 0.9rem; margin-top: 10px; }
 
-        /* AP Subject Pills */
+        /* Academic Subject Pills */
         .subjects { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px; }
         .pill { background: #1f2937; border: 1px solid #374151; padding: 4px 12px; border-radius: 99px; font-size: 0.75rem; font-weight: 600; color: #d1d5db; }
 
         /* Action Buttons */
         .btn { 
-            margin-top: auto; padding: 10px 18px; 
+            margin-top: 20px; padding: 10px 18px; 
             background: #2563eb; color: white; border-radius: 12px; 
             text-decoration: none; font-weight: 700; font-size: 0.85rem; 
             align-self: flex-start; transition: 0.2s;
@@ -73,7 +73,7 @@
         /* Mobile Optimization */
         @media (max-width: 900px) {
             .bento-grid { grid-template-columns: 1fr; }
-            .span-2, .span-3 { grid-column: span 1; }
+            .span-2 { grid-column: span 1; }
         }
     </style>
 </head>
@@ -88,14 +88,14 @@
     <div class="bento-grid">
         
         <div class="block span-2">
-            <span class="label">Research Internship // UCONN</span>
+            <span class="label">Research Internship // UCONN Summer 2025</span>
             <h2>Inverse Navier-Stokes & Neural Networks</h2>
-            <p>Applied Physics-Informed Neural Networks (PINNs) and Least Squares methods to solve complex fluid dynamics under Dr. Chang Liu. Bridging advanced calculus with AI-driven computational modeling.</p>
-            <a href="REPLACE_WITH_DRIVE_LINK" class="btn" style="margin-top:20px;">View Technical Project</a>
+            <p>Developing Physics-Informed Neural Network (PINN) solutions for fluid dynamics under Dr. Chang Liu. Solving complex equations using Least Squares methods and Python programming.</p>
+            <a href="REPLACE_WITH_DRIVE_LINK" class="btn">View Technical Project</a>
         </div>
 
         <div class="block row-2">
-            <span class="label">Academic Excellence</span>
+            <span class="label">Academic Foundation</span>
             <h2>Core Rigor</h2>
             <p>Junior @ Avon High School<br><strong>Weighted GPA: 4.1</strong></p>
             <div class="subjects">
@@ -106,38 +106,47 @@
                 <span class="pill">Engineering Drafting (H)</span>
                 <span class="pill">Robotics Engineering (H)</span>
             </div>
-            <p style="margin-top:20px; font-size:0.8rem;">Honor Roll: 8 Consecutive Quarters</p>
+            <p style="margin-top: 20px; font-size: 0.8rem; border-top: 1px solid var(--border); padding-top: 15px;">Honor Roll: All 8 Quarters</p>
+        </div>
+
+        <div class="block" style="background: linear-gradient(135deg, #1e3a8a, #111827); border: none;">
+            <span class="label" style="color: #60a5fa;">Credentials</span>
+            <h2>Official Resume</h2>
+            <p style="color: #94a3b8; font-size: 0.8rem; margin-bottom: 15px;">PDF Format • Jan 2026</p>
+            <a href="./saujaskantresume.pdf" download class="btn" style="background: #fff; color: #1e3a8a; width: 100%; text-align: center; box-sizing: border-box;">Download PDF</a>
         </div>
 
         <div class="block">
             <span class="label">Engineering Competition</span>
             <h2>Vex Robotics Strategy</h2>
-            <p>State Qualifier for AHS Falconbots. Lead designer for World Championship qualifying teams.</p>
+            <p>Lead designer for AHS Falconbots. Secured 1st Place (Design) at States and World Championship berth.</p>
             <a href="REPLACE_WITH_DRIVE_LINK" class="btn">View Designs</a>
         </div>
 
-        <div class="block">
-            <span class="label">Leadership & Fabrication</span>
-            <h2>MakeitFixit Club</h2>
-            <p>Founder & Technical Director. Engineering 3D-printed solutions for school infrastructure.</p>
-        </div>
-
-        <div class="block" style="background: linear-gradient(135deg, #1e3a8a, #111827); border: none;">
-            <span class="label" style="color: #60a5fa;">Credentials</span>
-            <h2 style="font-size: 1.2rem;">Official Resume</h2>
-            <a href="./saujaskantresume.pdf" download class="btn" style="background: #fff; color: #1e3a8a; width: 100%; text-align: center; box-sizing: border-box;">Download PDF</a>
-        </div>
-
         <div class="block span-2">
-            <span class="label">Community STEM</span>
-            <h2>CSC Executive Co-Chair</h2>
-            <p>Managing student-driven science exhibits and youth-led initiatives. Developed filtration models for public exhibition.</p>
+            <span class="label">Leadership & Fabrication</span>
+            <h2>MakeitFixit Club Founder</h2>
+            <p>Leading the development of 3D-printed mechanical solutions using CAD tools (Inventor) for school infrastructure. Managing the full design-to-fabrication process for school staff and clubs.</p>
+            <a href="REPLACE_WITH_DRIVE_LINK" class="btn">View Project Folder</a>
         </div>
 
         <div class="block">
-            <span class="label">Global Service</span>
-            <h2>Tutoring & Volunteering</h2>
-            <p>Hindi/Math tutoring and support for special needs via Anurag Society.</p>
+            <span class="label">STEM Leadership</span>
+            <h2>CSC Executive Co-Chair</h2>
+            <p>Managing budget and strategic development for public science exhibits at the CT Science Center.</p>
+        </div>
+
+        <div class="block">
+            <span class="label">Quantitative Skills</span>
+            <h2>AMC-8 Top 5%</h2>
+            <p>Global ranking in American Mathematics Competitions. Regional Math Counts competitor.</p>
+        </div>
+
+        <div class="block">
+            <span class="label">Community Engagement</span>
+            <h2>Global Service</h2>
+            <p>Math/Hindi tutoring and service for special needs through the Anurag Society.</p>
+            <a href="REPLACE_WITH_DRIVE_LINK" class="btn">Service Log</a>
         </div>
 
     </div>
