@@ -5,175 +5,176 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saujas Kant | Engineering Portfolio</title>
     <style>
-        /* Modern 2026 Engineering Theme */
         :root { 
-            --bg: #0d1117; 
-            --card: #161b22; 
-            --border: #30363d; 
-            --accent: #58a6ff; 
-            --text: #c9d1d9; 
-            --success: #238636; 
+            --bg: #0d1117; --card: #161b22; --border: #30363d; 
+            --accent: #58a6ff; --text: #c9d1d9; --success: #238636; 
         }
 
         body { 
-            background-color: var(--bg); 
-            color: var(--text); 
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; 
-            margin: 0; 
-            padding: 20px; 
-            line-height: 1.5; 
+            background-color: var(--bg); color: var(--text); 
+            font-family: -apple-system, sans-serif; margin: 0; padding: 20px; 
         }
 
-        .wrapper { 
-            max-width: 1200px; 
-            margin: 0 auto; 
-            display: flex; 
-            flex-direction: column; 
-            gap: 24px; 
-        }
+        .wrapper { max-width: 1300px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+        
+        header { padding: 40px 0 20px 0; }
+        h1 { color: white; margin: 0; font-size: 3rem; font-weight: 800; letter-spacing: -1px; }
 
-        header { padding: 20px 0; border-bottom: 1px solid var(--border); margin-bottom: 10px; }
-        h1 { color: white; margin: 0; font-size: 2.5rem; font-weight: 800; }
-        .subhead { color: var(--accent); font-weight: 600; margin-top: 5px; }
-
-        /* Bento Grid Config */
-        .bento-grid { 
+        /* Bento Grid Setup */
+        .grid { 
             display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
-            grid-auto-rows: minmax(280px, auto); 
-            gap: 20px; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            grid-auto-rows: minmax(220px, auto); 
+            gap: 16px; 
         }
 
         .block { 
-            background: var(--card); 
-            border: 1px solid var(--border); 
-            border-radius: 24px; 
-            padding: 30px; 
-            position: relative; 
-            overflow: hidden; 
-            display: flex; 
-            flex-direction: column; 
-            justify-content: flex-end; 
-            transition: transform 0.25s ease, border-color 0.25s ease; 
+            background: var(--card); border: 1px solid var(--border); 
+            border-radius: 28px; padding: 25px; display: flex; 
+            flex-direction: column; justify-content: space-between; 
+            transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
         }
 
-        .block:hover { 
-            transform: translateY(-5px); 
-            border-color: var(--accent); 
-        }
+        .block:hover { border-color: var(--accent); background: #1c2128; }
 
-        /* Span Logic for Importance */
+        /* Sizing modifiers */
         @media (min-width: 768px) {
             .large { grid-column: span 2; }
             .tall { grid-row: span 2; }
+            .featured { grid-column: span 2; grid-row: span 2; background: linear-gradient(145deg, #1c2128, #161b22); }
         }
 
-        /* Visual Elements */
-        .tag { color: var(--accent); font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 12px; display: block; }
-        h2 { color: white; margin: 0 0 10px 0; font-size: 1.5rem; line-height: 1.2; }
-        p { font-size: 14px; color: #8b949e; margin: 0; }
-        ul { padding-left: 18px; color: #8b949e; font-size: 13px; margin: 12px 0; }
+        /* Typography */
+        .tag { color: var(--accent); font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px; display: block; }
+        h2 { color: white; margin: 0 0 10px 0; font-size: 1.4rem; }
+        p { font-size: 14px; color: #8b949e; margin: 0; line-height: 1.5; }
+        ul { padding-left: 18px; color: #8b949e; font-size: 13px; margin: 8px 0; }
         
-        /* Links & Buttons */
-        .drive-btn { 
-            display: inline-block; 
-            margin-top: 15px; 
-            padding: 10px 18px; 
-            background: rgba(88, 166, 255, 0.1); 
-            color: var(--accent); 
-            text-decoration: none; 
-            border-radius: 10px; 
-            font-size: 13px; 
-            font-weight: 700; 
-            border: 1px solid transparent;
-            transition: 0.2s;
+        /* Links */
+        .btn { 
+            display: inline-block; margin-top: 15px; padding: 8px 14px; 
+            background: rgba(88, 166, 255, 0.1); color: var(--accent); 
+            text-decoration: none; border-radius: 8px; font-size: 12px; font-weight: 700; 
         }
-        .drive-btn:hover { background: var(--accent); color: white; }
+        .btn:hover { background: var(--accent); color: white; }
 
-        /* Resume Thumbnail Specifics */
-        .resume-card { align-items: center; justify-content: center; text-align: center; background: linear-gradient(145deg, #1c2128, #161b22); }
-        .pdf-icon { width: 60px; height: 80px; background: #30363d; border: 2px dashed #484f58; border-radius: 6px; margin-bottom: 15px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; }
-        .download-btn { background: var(--success); color: white; padding: 12px 24px; border-radius: 12px; text-decoration: none; font-weight: 700; margin-top: 10px; }
-
+        /* Resume Specific */
+        .resume-mini { align-items: center; justify-content: center; text-align: center; border: 2px dashed var(--border); }
+        .download-now { background: var(--success); color: white; padding: 10px 20px; border-radius: 10px; text-decoration: none; font-weight: bold; }
     </style>
 </head>
 <body>
 
 <div class="wrapper">
     <header>
+        <span class="tag" style="color:var(--success)">Available for Internships 2026</span>
         <h1>Saujas Kant</h1>
-        <div class="subhead">Avon High School • Engineering Major Applicant • GPA: 4.1</div>
+        <p style="font-size: 18px; margin-top: 5px;">Avon High School • Engineering & Physics Researcher • GPA 4.1</p>
     </header>
 
-    <div class="bento-grid">
+    <div class="grid">
         
-        <div class="block large">
-            <div class="content">
-                <span class="tag">UCONN Summer Internship 2025</span>
-                <h2>Inverse Navier Stokes & Neural Networks</h2>
-                <p>Solving complex fluid dynamics equations using Physics-Informed Neural Networks and Python under Dr. Chang Liu. Bridging the gap between theoretical calculus and AI-driven modeling.</p>
-                <a href="#" class="drive-btn">View Research Documentation</a>
+        <div class="block featured">
+            <div>
+                <span class="tag">University Internship</span>
+                <h2 style="font-size: 2rem;">Inverse Navier Stokes & PI Neural Networks</h2>
+                <p>Collaborated with Dr. Chang Liu at UCONN to solve fluid dynamics challenges using Least Squares methods and Physics-Informed Neural Networks. A deep dive into the intersection of Fluid Mechanics and Machine Learning.</p>
+                <ul style="margin-top: 15px; font-size: 15px;">
+                    <li>Applied Multivariable Calculus</li>
+                    <li>Python-based Predictive Modeling</li>
+                    <li>Advanced Fluid Dynamics Simulation</li>
+                </ul>
             </div>
+            <a href="REPLACE_WITH_DRIVE_LINK" class="btn">View Research Presentation →</a>
         </div>
 
-        <div class="block resume-card">
-            <div class="pdf-icon">PDF</div>
-            <h3 style="color: white; margin: 0 0 15px 0;">Official Resume</h3>
-            <a href="./saujaskantresume.pdf" download class="download-btn">Download Full PDF</a>
+        <div class="block resume-mini">
+            <span class="tag">Documents</span>
+            <h3 style="color:white; margin-bottom: 15px;">Official Resume</h3>
+            <a href="./saujaskantresume.pdf" download class="download-now">Download PDF</a>
         </div>
 
         <div class="block tall">
-            <div class="content">
-                <span class="tag">Robotics & Fabrication</span>
-                <h2>Vex Robotics Championship</h2>
-                <p>Leading AHS Falconbots (V5) and directed World Championship berth team (Vex IQ).</p>
+            <div>
+                <span class="tag">Robotics Competition</span>
+                <h2>Vex V5 & IQ Success</h2>
+                <p>From Vex IQ World Championship berths to leading the 2025 AHS Falconbots.</p>
                 <ul>
-                    <li>1st Place Design Award (States)</li>
-                    <li>State Finalist 2025 (Position 22)</li>
-                    <li>Vex V5 Block Coding & Python</li>
-                    <li>Autodesk Inventor Working Models</li>
+                    <li>1st Place State Design Award</li>
+                    <li>Qualified for 2025 State Championship</li>
+                    <li>Directed Teamwork & Strategy</li>
+                    <li>V5 Block Coding & Python</li>
                 </ul>
-                <a href="#" class="drive-btn">View Competition Photos</a>
             </div>
+            <a href="REPLACE_WITH_DRIVE_LINK" class="btn">Robot Design Logs</a>
         </div>
 
         <div class="block large">
-            <div class="content">
-                <span class="tag">Leadership & STEM Advocacy</span>
+            <div>
+                <span class="tag">Innovation</span>
+                <h2>MakeitFixit Founder & Director</h2>
+                <p>Founded a student-led initiative to engineer 3D-printed mechanical solutions for school staff. Managed the full lifecycle from CAD drafting in Inventor to final fabrication.</p>
+            </div>
+            <a href="REPLACE_WITH_DRIVE_LINK" class="btn">View CAD Projects</a>
+        </div>
+
+        <div class="block">
+            <div>
+                <span class="tag">Leadership</span>
                 <h2>CSC Executive Co-Chair</h2>
-                <p>Managing full council operations and strategic delivery of science exhibits. Developed water filtration models and managed light/sound illusion engagement programs for public exhibitions.</p>
-                <a href="#" class="drive-btn">Science Center Portfolio</a>
+                <p>Elected for two consecutive years to lead the Teen Advisory Council. Managing budgets and designing public science exhibits.</p>
             </div>
+            <a href="REPLACE_WITH_DRIVE_LINK" class="btn">Exhibit Photos</a>
         </div>
 
         <div class="block">
-            <div class="content">
-                <span class="tag">Technical Toolkit</span>
-                <h2>Math & Programming</h2>
-                <ul>
-                    <li>AP CSA, Calc BC, Physics 1&2</li>
-                    <li>Python & Java Programming</li>
-                    <li>3D CAD (Drafting & Design)</li>
-                    <li>AMC-8 Top 5% Globally</li>
-                </ul>
+            <div>
+                <span class="tag">Software Engineering</span>
+                <h2>Congressional App Challenge</h2>
+                <p>Designed and built "Skill Chain," a specialized mobile application for the 2025 Congressional challenge.</p>
             </div>
+            <a href="REPLACE_WITH_DRIVE_LINK" class="btn">View Codebase</a>
         </div>
 
         <div class="block">
-            <div class="content">
-                <span class="tag">Community & Service</span>
-                <h2>Global Citizenship</h2>
-                <p>Tutoring Math/Hindi, Seal of Biliteracy, and community publication contributor. Volunteering with the Anurag Society for special needs.</p>
-                <a href="#" class="drive-btn">View Volunteer Logs</a>
+            <div>
+                <span class="tag">Mathematics</span>
+                <h2>AMC-8 & Math Counts</h2>
+                <p>Top 5% globally in American Mathematics Competition. Selected for Math Counts Regionals and AHS Math Team member.</p>
             </div>
         </div>
 
         <div class="block large">
-            <div class="content">
-                <span class="tag">Engineering & Discipline</span>
-                <h2>Cross-Country & Innovation</h2>
-                <p>Founder of MakeitFixit Club, delivering 3D-printed mechanical solutions to staff. Competing on the AHS Cross-Country marathon team to build physical and mental resilience.</p>
-                <a href="#" class="drive-btn">Club Documents</a>
+            <div>
+                <span class="tag">Service</span>
+                <h2>Community & Global Impact</h2>
+                <p>Tutoring Math and Hindi, assisting special needs students via the Anurag Society, and serving as a Book Buddy at Avon Public Library.</p>
+            </div>
+            <a href="REPLACE_WITH_DRIVE_LINK" class="btn">Service Records</a>
+        </div>
+
+        <div class="block">
+            <div>
+                <span class="tag">Language</span>
+                <h2>Seal of Biliteracy</h2>
+                <p>Attained State Seal for Hindi Proficiency. Gold Medalist at COLTS Poetry contest and Youth Volunteer for Hindi USA.</p>
+            </div>
+        </div>
+
+        <div class="block">
+            <div>
+                <span class="tag">Athletics</span>
+                <h2>Cross-Country Marathon</h2>
+                <p>AHS Cross-Country team member (2023-24). Building mental and physical endurance through long-distance running.</p>
+            </div>
+            <a href="REPLACE_WITH_DRIVE_LINK" class="btn">Marathon Medals</a>
+        </div>
+
+        <div class="block">
+            <div>
+                <span class="tag">Environmental</span>
+                <h2>Junior Park Ranger</h2>
+                <p>Earned 25+ badges from the National Park Service since Grade 2. Committed to the protection of national resources.</p>
             </div>
         </div>
 
