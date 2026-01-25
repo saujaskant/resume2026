@@ -16,61 +16,48 @@
 
         body { 
             background-color: var(--bg); color: var(--text-main); 
-            font-family: 'Inter', system-ui, -apple-system, sans-serif; 
+            font-family: 'Inter', system-ui, sans-serif; 
             margin: 0; padding: 40px 20px; line-height: 1.6;
         }
 
-        .container { max-width: 1200px; margin: 0 auto; }
+        .container { max-width: 1300px; margin: 0 auto; }
 
-        /* Professional Header */
         header { margin-bottom: 40px; border-left: 4px solid var(--accent); padding-left: 20px; }
         h1 { margin: 0; font-size: 3rem; font-weight: 800; letter-spacing: -0.05em; }
         .tagline { color: var(--accent); font-size: 1.2rem; font-weight: 600; margin-top: 5px; }
 
-        /* The Grid - 3-Column Fixed Structure to prevent overlapping */
         .bento-grid { 
             display: grid; 
             grid-template-columns: repeat(3, 1fr); 
-            grid-auto-rows: minmax(200px, auto); 
-            gap: 24px; 
+            grid-auto-rows: minmax(220px, auto); 
+            gap: 20px; 
         }
 
         .block { 
-            background: var(--card); 
-            border: 1px solid var(--border); 
-            border-radius: 24px; 
-            padding: 32px; 
-            display: flex; 
-            flex-direction: column;
-            transition: all 0.3s ease;
+            background: var(--card); border: 1px solid var(--border); 
+            border-radius: 24px; padding: 28px; display: flex; 
+            flex-direction: column; transition: all 0.3s ease;
         }
 
-        .block:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5); }
+        .block:hover { border-color: var(--accent); transform: translateY(-4px); }
 
-        /* Grid Logic */
         .span-2 { grid-column: span 2; }
         .row-2 { grid-row: span 2; }
 
-        /* Content Styling */
-        .label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--accent); letter-spacing: 0.1em; margin-bottom: 12px; display: block; }
-        h2 { font-size: 1.5rem; margin: 0 0 12px 0; color: #fff; }
-        p { margin: 0; color: var(--text-dim); font-size: 0.95rem; }
-        ul { padding-left: 18px; color: var(--text-dim); font-size: 0.9rem; margin-top: 10px; }
+        .label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: var(--accent); letter-spacing: 0.1em; margin-bottom: 12px; display: block; }
+        h2 { font-size: 1.4rem; margin: 0 0 10px 0; color: #fff; line-height: 1.2; }
+        p { margin: 0; color: var(--text-dim); font-size: 0.9rem; }
+        
+        .subjects { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+        .pill { background: #1f2937; border: 1px solid #374151; padding: 4px 10px; border-radius: 99px; font-size: 0.7rem; font-weight: 600; color: #d1d5db; }
 
-        /* Academic Subject Pills */
-        .subjects { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px; }
-        .pill { background: #1f2937; border: 1px solid #374151; padding: 4px 12px; border-radius: 99px; font-size: 0.75rem; font-weight: 600; color: #d1d5db; }
-
-        /* Action Buttons */
         .btn { 
-            margin-top: 20px; padding: 10px 18px; 
-            background: #2563eb; color: white; border-radius: 12px; 
-            text-decoration: none; font-weight: 700; font-size: 0.85rem; 
+            margin-top: auto; padding: 8px 16px; 
+            background: #2563eb; color: white; border-radius: 10px; 
+            text-decoration: none; font-weight: 700; font-size: 0.8rem; 
             align-self: flex-start; transition: 0.2s;
         }
-        .btn:hover { background: #1d4ed8; }
 
-        /* Mobile Optimization */
         @media (max-width: 900px) {
             .bento-grid { grid-template-columns: 1fr; }
             .span-2 { grid-column: span 1; }
@@ -82,71 +69,73 @@
 <div class="container">
     <header>
         <h1>Saujas Kant</h1>
-        <div class="tagline">Aspiring Engineering Major | Researcher | Robotics Lead</div>
+        <div class="tagline">Aspiring Engineering Major | Researcher | Technical Leader</div>
     </header>
 
     <div class="bento-grid">
         
         <div class="block span-2">
-            <span class="label">Research Internship // UCONN Summer 2025</span>
+            <span class="label">Advanced Engineering Research // UCONN</span>
             <h2>Inverse Navier-Stokes & Neural Networks</h2>
-            <p>Developing Physics-Informed Neural Network (PINN) solutions for fluid dynamics under Dr. Chang Liu. Solving complex equations using Least Squares methods and Python programming.</p>
-            <a href="REPLACE_WITH_DRIVE_LINK" class="btn">View Technical Project</a>
+            <p>Bridging the gap between classical fluid mechanics and modern AI. Developed Physics-Informed Neural Network (PINN) solutions for complex flow equations under Dr. Chang Liu.</p>
+            <a href="REPLACE_WITH_DRIVE_LINK" class="btn">Technical Case Study</a>
         </div>
 
         <div class="block row-2">
             <span class="label">Academic Foundation</span>
-            <h2>Core Rigor</h2>
-            <p>Junior @ Avon High School<br><strong>Weighted GPA: 4.1</strong></p>
+            <h2>Core Rigor & GPA</h2>
+            <p><strong>Weighted GPA: 4.1</strong> | 8-Quarter Honor Roll</p>
             <div class="subjects">
                 <span class="pill">AP Calculus BC</span>
                 <span class="pill">AP Physics 1 & 2</span>
                 <span class="pill">AP Computer Science A</span>
-                <span class="pill">AP Environmental Sci</span>
                 <span class="pill">Engineering Drafting (H)</span>
                 <span class="pill">Robotics Engineering (H)</span>
+                <span class="pill">AP Environmental Sci</span>
             </div>
-            <p style="margin-top: 20px; font-size: 0.8rem; border-top: 1px solid var(--border); padding-top: 15px;">Honor Roll: All 8 Quarters</p>
+            <p style="margin-top: 20px; font-size: 0.8rem; color: #60a5fa;">Technical building blocks for B.S. in Engineering.</p>
+        </div>
+
+        <div class="block">
+            <span class="label">Applied Robotics</span>
+            <h2>Vex Competition Strategy</h2>
+            <p>Lead designer for AHS Falconbots. Secured 1st Place (Design) and World Championship berth through iterative engineering and CAD modeling.</p>
+        </div>
+
+        <div class="block">
+            <span class="label">Hardware Innovation</span>
+            <h2>MakeitFixit Founder</h2>
+            <p>Directing CAD design-to-fabrication of mechanical solutions for school infrastructure, demonstrating end-to-end project management.</p>
         </div>
 
         <div class="block" style="background: linear-gradient(135deg, #1e3a8a, #111827); border: none;">
-            <span class="label" style="color: #60a5fa;">Credentials</span>
-            <h2>Official Resume</h2>
-            <p style="color: #94a3b8; font-size: 0.8rem; margin-bottom: 15px;">PDF Format • Jan 2026</p>
-            <a href="./saujaskantresume.pdf" download class="btn" style="background: #fff; color: #1e3a8a; width: 100%; text-align: center; box-sizing: border-box;">Download PDF</a>
-        </div>
-
-        <div class="block">
-            <span class="label">Engineering Competition</span>
-            <h2>Vex Robotics Strategy</h2>
-            <p>Lead designer for AHS Falconbots. Secured 1st Place (Design) at States and World Championship berth.</p>
-            <a href="REPLACE_WITH_DRIVE_LINK" class="btn">View Designs</a>
+            <span class="label" style="color: #60a5fa;">Professional Overview</span>
+            <h2>Full Resume</h2>
+            <a href="./saujaskantresume.pdf" download class="btn" style="background: #fff; color: #1e3a8a; width: 100%; text-align: center; box-sizing: border-box;">Download saujaskantresume.pdf</a>
         </div>
 
         <div class="block span-2">
-            <span class="label">Leadership & Fabrication</span>
-            <h2>MakeitFixit Club Founder</h2>
-            <p>Leading the development of 3D-printed mechanical solutions using CAD tools (Inventor) for school infrastructure. Managing the full design-to-fabrication process for school staff and clubs.</p>
-            <a href="REPLACE_WITH_DRIVE_LINK" class="btn">View Project Folder</a>
+            <span class="label">Community Service & Mentorship</span>
+            <h2>Technical Outreach & Peer Support</h2>
+            <p>Applying bilingual proficiency and quantitative skills to serve the community. Math and Hindi tutoring; facilitating educational support for special needs via Anurag Society; and elementary school ESY volunteering.</p>
         </div>
 
         <div class="block">
-            <span class="label">STEM Leadership</span>
+            <span class="label">Discipline & Stewardship</span>
+            <h2>NPS Junior Ranger</h2>
+            <p>A decade of commitment to resource protection with 25+ badges, reflecting the long-term dedication required for scientific excellence.</p>
+        </div>
+
+        <div class="block">
+            <span class="label">STEM Advocacy</span>
             <h2>CSC Executive Co-Chair</h2>
-            <p>Managing budget and strategic development for public science exhibits at the CT Science Center.</p>
+            <p>Selected co-chair for planning student-driven exhibits, aligning scientific theory with public engagement and communication.</p>
         </div>
 
         <div class="block">
-            <span class="label">Quantitative Skills</span>
-            <h2>AMC-8 Top 5%</h2>
-            <p>Global ranking in American Mathematics Competitions. Regional Math Counts competitor.</p>
-        </div>
-
-        <div class="block">
-            <span class="label">Community Engagement</span>
-            <h2>Global Service</h2>
-            <p>Math/Hindi tutoring and service for special needs through the Anurag Society.</p>
-            <a href="REPLACE_WITH_DRIVE_LINK" class="btn">Service Log</a>
+            <span class="label">Linguistic Excellence</span>
+            <h2>Hindi Seal & COLTS Poetry</h2>
+            <p>Winner of the COLTS Poetry Gold Medal (2025). Demonstrating the advanced communication skills essential for collaborative engineering teams.</p>
         </div>
 
     </div>
