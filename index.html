@@ -150,7 +150,17 @@
             height: auto;
             border-radius: 12px;
         }
-
+        .image.grid-2x2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+        .image.grid-2x2 img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            object-fit: contain;
+        }
     </style>
 </head>
 
@@ -310,9 +320,11 @@
             </p>
         </div>
 
-        <div class="image side-by-side">
+        <div class="image grid-2x2">
             <img src="images/SaujasCADPenandMobileholder.jpg" alt="">
             <img src="images/SaujasCADYoYo.jpg" alt="">
+            <img src="images/photo1.jpg" alt="">
+            <img src="images/photo2.jpg" alt="">
         </div>
 
     </div>
@@ -327,11 +339,11 @@
             </p>
         </div>
 
-        <div class="image" style="display: flex; gap: 0;">
-            <img src="images/SaujasCADDeskCaddy.jpg" style="width: 25%; height: auto;" alt="Desk Caddy CAD">
-            <img src="images/SaujasCADWireStraightener.jpg" style="width: 25%; height: auto;" alt="Wire Straightener CAD">
-            <img src="images/photo3.jpg" style="width: 25%; height: auto;" alt="Additional Photo 3">
-            <img src="images/photo4.jpg" style="width: 25%; height: auto;" alt="Additional Photo 4">
+        <div class="image grid-2x2">
+            <img src="images/SaujasCADDeskCaddy.jpg" alt="">
+            <img src="images/SaujasCADWireStraightener.jpg" alt="">
+            <img src="images/photo3.jpg" alt="">
+            <img src="images/photo4.jpg" alt="">
         </div>
     </div>
 
